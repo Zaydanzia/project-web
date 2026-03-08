@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0baa9037;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('bgweb-2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #0baa9037; 
+    z-index: -1;
+}
+
+/* --- SISTEM PERPINDAHAN HALAMAN --- */
+.screen {
+    display: none; /* Sembunyi secara default */
+    width: 100%;
+    min-height: 100vh;
+}
+
+.screen.active {
+    display: flex; /* Muncul jika class active ada */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- HOME SCREEN CUSTOMIZATION --- */
+.welcome-box {
+    text-align: center;
+    background: #05987878; /* Warna hijau teal pilihanmu */
+    padding: 60px;
+    border: 1px solid #333;
+    position: relative;
+    max-width: 600px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+}
+
+.welcome-box h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.welcome-box p {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+.btn-main {
+    background: white;
+    color: #059878;
+    border: none;
+    padding: 15px 40px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 2px;
+}
+
+.btn-main:hover {
+    background: #00ff88;
+    color: #333;
+    box-shadow: 0 0 20px #00ff88;
+}
+
+/* --- KALKULATOR SCREEN (WRAPPER) --- */
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.navbar {
+    background: #05987878;
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: 1px solid #333;
+    margin-bottom: 40px;
+}
+
+.navbar a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.navbar a.active { color: white; border-bottom: 1px solid white; }
+
+.main-frame {
+    background: #05987878; 
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    border: 1px solid #333;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.divider {
+    width: 50px;
+    height: 2px;
+    background: white;
+    margin: 15px auto 30px;
+}
+
+/* --- FORM & INPUT --- */
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.field label {
+    font-size: 10px;
+    color: #ffffff;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    background: #333;
+    border: 1px solid #444;
+    padding: 12px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 4px;
+}
+
+.btn-calc {
+    width: 100%;
+    background: white;
+    color: #333;
+    border: none;
+    padding: 15px;
+    margin-top: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.3s;
+}
+
+.btn-calc:hover { background: #00ff88; }
+
+/* Hasil */
+.result-display {
+    margin-top: 25px;
+    text-align: center;
+    display: none;
+    border-top: 1px solid #ffffff33;
+    padding-top: 15px;
+}
+
+#caloriesValue {
+    font-size: 40px;
+    font-family: 'Orbitron', sans-serif;
+    color: #ff4d4d; /* Merah cerah agar kontras dengan hijau */
+}
+
+/* --- DEKORASI SUDUT (REUSABLE) --- */
+.corner { position: absolute; width: 10px; height: 10px; background: white; }
+.tl { top: -2px; left: -2px; }
+.tr { top: -2px; right: -2px; }
+.bl { bottom: -2px; left: -2px; }
+.br { bottom: -2px; right: -2px; }

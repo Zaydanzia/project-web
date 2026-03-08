@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTech - Welcome</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-overlay"></div>
+
+    <section id="home-screen" class="screen active">
+        <div class="welcome-box">
+            <div class="logo-circle">⚡</div>
+            <h1>MEDICAL <br><span>TECHNOLOGY</span></h1>
+            <div class="divider"></div>
+            <p>Sistem Pemantauan Kalori Cerdas untuk <br> Gaya Hidup Modern.</p>
+            <button class="btn-main" onclick="goToCalculator()">GET STARTED</button>
+        </div>
+        <div class="corner tl"></div><div class="corner tr"></div>
+        <div class="corner bl"></div><div class="corner br"></div>
+    </section>
+
+    <section id="calc-screen" class="screen">
+        <div class="wrapper">
+            <nav class="navbar">
+                <a href="#" onclick="location.reload()">HOME</a>
+                <a href="#" class="active">CALCULATOR</a>
+                <a href="#">INFO</a>
+            </nav>
+
+            <div class="main-frame">
+                <div class="calc-container">
+                    <h1>CALORIE BURNED</h1>
+                    <div class="divider"></div>
+                    
+                    <div class="input-box">
+                        <div class="field">
+                            <label>WEIGHT (KG)</label>
+                            <input type="number" id="weight" placeholder="0">
+                        </div>
+                        <div class="field">
+                            <label>DURATION (MIN)</label>
+                            <input type="number" id="duration" placeholder="0">
+                        </div>
+                        <div class="field">
+                            <label>EXERCISE TYPE</label>
+                            <select id="exercise">
+                                <option value="7">RUNNING</option>
+                                <option value="8">CYCLING</option>
+                                <option value="6">SWIMMING</option>
+                                <option value="3.5">WALKING</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="btn-calc" onclick="hitungKalori()">CALCULATE NOW</button>
+
+                    <div id="result-display" class="result-display">
+                        <p>ESTIMATED ENERGY LOSS</p>
+                        <h2 id="caloriesValue">0</h2>
+                        <span>KCAL</span>
+                    </div>
+                </div>
+                <div class="corner tl"></div><div class="corner tr"></div>
+                <div class="corner bl"></div><div class="corner br"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
